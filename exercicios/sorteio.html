@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: rgb(205, 139, 255);
+            font: normal 15px 'Arial';
+        }
+        h1 {
+            font-size: 18px;
+            color: white;
+            width: 700px;
+            text-align: center;
+            margin: auto;
+            padding: 20px;
+        }
+        section {
+            width: 600px;;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 20px;
+        }
+        .botoes {
+            text-align: center;
+        }
+        #botao {
+            margin-top: 10px;
+            width: 100px;
+            padding: 8px;
+            background-color: white;
+            border-radius: 50px;
+            border: solid 1px gray;
+        }
+        footer {
+            color: white;
+            text-align: center;
+            margin-top: 20px;
+            font-style: italic;
+        }
+    </style>
+    <title>Exec 01</title>
+</head>
+<body>
+    <header>
+        <h1>Sistema de sorteio de números aleatórios em JavaScript.</h1>
+    </header>
+    <section>
+        <div>
+            <p>Clique no botão para sortear um número entre 1 e 100:</p>
+        </div>
+        <div class="botoes">
+            <input id="botao" type="button" value="Sortear" onclick="sortear()">
+        <input id="botao" type="button" value="Limpar" onclick="limpar()">
+        </div>
+        <div id="res"></div>
+    </section>
+    <footer>
+        Desenvolvido por Maria Beatriz.
+    </footer>
+    <script>
+        function sortear(){
+            var res = document.getElementById('res')
+            var max = 100
+            var min = 1
+            var sort = parseInt(Math.random() * 100)
+
+            res.innerHTML += `<p>O número sorteado foi <strong>${sort}</strong>.</p>`
+            res.innerHTML += ' '
+
+        }
+        function limpar(){
+            res.innerHTML = ' '
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: rgba(255, 0, 0, 0.71);
+            font: normal 15px 'Arial';
+        }
+        h1 {
+            font-size: 18px;
+            color: white;
+            width: 700px;
+            text-align: center;
+            margin: auto;
+            padding: 20px;
+        }
+        section {
+            width: 600px;;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 20px;
+        }
+        .botoes {
+            text-align: center;
+        }
+        #botao {
+            margin-top: 10px;
+            width: 150px;
+            padding: 8px;
+            background-color: white;
+            border-radius: 50px;
+            border: solid 1px gray;
+        }
+        footer {
+            color: white;
+            text-align: center;
+            margin-top: 20px;
+            font-style: italic;
+        }
+    </style>
+    <title>Exec 01</title>
+</head>
+<body onload="sortear()">
+    <header>
+        <h1>Jogo da adivinhação.</h1>
+    </header>
+    <section>
+        <div>
+            <p>Clique no botão adivinhar e digite o número que você acha que é o número sorteado.</p>
+        </div>
+        <div class="botoes">
+            <input id="botao" type="button" value="Adivinhar" onclick="adivinhar()">
+        </div>
+        <div id="res"></div>
+    </section>
+    <footer>
+        Desenvolvido por Maria Beatriz.
+    </footer>
+    <script>
+        let jogador = 0
+        let computador = 0
+
+        function sortear(){
+            let min = 1
+            let max = 100
+            let dif = max - min
+            let sorteado = Math.random()
+            computador = min + Math.trunc(dif * sorteado)     
+        }
+        function adivinhar(){
+            jogador = Number(window.prompt('Qual número você acha que é o sorteado?'))
+            var res = document.getElementById('res')
+
+            if (jogador < computador) {
+               res.innerHTML += `<p>Você falou ${jogador}. Meu número é <strong>MAIOR</strong>!</p>`
+            } else if (jogador > computador) {
+               res.innerHTML += `<p>Você falou ${jogador}. Meu número é    <strong>MENOR</strong>!</p>`
+            } else if (jogador == computador) {
+               res.innerHTML += `<p><strong>PARABÉNS!</strong> Você acertou! Eu tinha sorteado o valor ${computador}!</p>`
+               document.getElementById('botao').style.visibility = 'hidden'
+            }
+        }
+    </script>
+</body>
+</html>

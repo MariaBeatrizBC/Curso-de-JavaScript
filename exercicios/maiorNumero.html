@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: coral;
+            font: normal 15px 'Arial';
+        }
+        h1 {
+            font-size: 18px;
+            color: white;
+            width: 600px;
+            text-align: center;
+            margin: auto;
+            padding: 20px;
+        }
+        section {
+            width: 600px;;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 20px;
+        }
+        #verificar {
+            margin-top: 20px;
+        }
+        footer {
+            color: white;
+            text-align: center;
+            margin-top: 20px;
+            font-style: italic;
+        }
+    </style>
+    <title>Exec 01</title>
+</head>
+<body>
+    <header>
+        <h1>Faça um programa JavaScript que receba 3 números informados pelo usuário e em seguida apresente uma mensagem de alerta informando qual é o maior número dentre os números informados.</h1>
+    </header>
+    <section>
+        <div>
+            <p>Digite os 3 números:</p>
+            <input type="number" name="num1" id="num1">
+            <input type="number" name="num2" id="num2">
+            <input type="number" name="num3" id="num3">
+        </div>
+        <input id="verificar" type="button" value="Verificar" onclick="verificar()">
+        <div id="res">
+            <p>O resultado aparecerá aqui.</p>
+        </div>
+    </section>
+    <footer>
+        Desenvolvido por Maria Beatriz.
+    </footer>
+    <script>
+        function verificar(){
+            var n1 = document.getElementById('num1')
+            var n2 = document.getElementById('num2')
+            var n3 = document.getElementById('num3')
+            var res = document.getElementById('res')
+
+            var num1 = Number(n1.value) //como estamos pegando o valor do DOM, é preciso converter para número
+            var num2 = Number(n2.value)
+            var num3 = Number(n3.value)
+
+            if(num1 == '' || num2 == '' || num3 == ''){ 
+                window.alert('Digite os números para verificar.')
+            } else {
+                if((num1 > num2) && (num1 > num3)){
+                    res.innerText = 'O maior valor é ' + num1
+                } else if((num2 > num1) && (num2 > num3)){
+                    res.innerText = 'O maior valor é ' + num2
+                } else {
+                    res.innerText = 'O maior valor é ' + num3
+                }            
+            }
+        }
+    </script>
+</body>
+</html>

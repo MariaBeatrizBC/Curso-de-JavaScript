@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: darkgoldenrod;
+            font: normal 15px 'Arial';
+        }
+        h1 {
+            font-size: 18px;
+            color: white;
+            width: 600px;
+            text-align: center;
+            margin: auto;
+            padding: 20px;
+        }
+        section {
+            width: 600px;;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 20px;
+        }
+        #verificar {
+            margin-top: 20px;
+        }
+        footer {
+            color: white;
+            text-align: center;
+            margin-top: 20px;
+            font-style: italic;
+        }
+    </style>
+    <title>Exec 01</title>
+</head>
+<body>
+    <header>
+        <h1>Faça um programa JavaScript em que o usuário informará 3 números e o programa calculará a média aritmética desses números.</h1>
+    </header>
+    <section>
+        <div>
+            <p>Digite os números:</p>
+            <input type="number" name="num1" id="num1">
+            <input type="number" name="num2" id="num2">
+            <input type="number" name="num3" id="num3">
+        </div>
+        <input id="verificar" type="button" value="Verificar" onclick="verificar()">
+        <div id="res">
+            <p>Resultado:</p>
+        </div>
+    </section>
+    <footer>
+        Desenvolvido por Maria Beatriz.
+    </footer>
+    <script>
+        function verificar(){
+            var num1 = document.getElementById('num1')
+            var num2 = document.getElementById('num2')
+            var num3 = document.getElementById('num3')
+            var res = document.getElementById('res')
+
+            var num1 = Number(num1.value) //como estamos pegando o valor do DOM, é preciso converter para número
+            var num2 = Number(num2.value)
+            var num3 = Number(num3.value)
+
+            if(num1 == '' || num2 == '' || num3 == ''){ 
+                window.alert('Digite os números para verificar.')
+            } else {
+                var media = (num1 + num2 + num3) / 3
+                res.innerHTML += 'A média aritmética é ' + media
+            }         
+        }
+    </script>
+</body>
+</html>

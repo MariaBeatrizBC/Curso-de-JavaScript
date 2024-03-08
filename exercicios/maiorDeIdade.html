@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: darkseagreen;
+            font: normal 15px 'Arial';
+        }
+        h1 {
+            font-size: 18px;
+            color: white;
+            width: 600px;
+            text-align: center;
+            margin: auto;
+            padding: 20px;
+        }
+        section {
+            width: 600px;;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 20px;
+        }
+        #verificar {
+            margin-top: 20px;
+        }
+        footer {
+            color: white;
+            text-align: center;
+            margin-top: 20px;
+            font-style: italic;
+        }
+    </style>
+    <title>Exec 01</title>
+</head>
+<body>
+    <header>
+        <h1>Faça um programa JavaScript em que o usuário informará a sua idade e o programa emitirá uma mensagem dizendo se o usuário e ou não menor de idade.</h1>
+    </header>
+    <section>
+        <div>
+            <p>Digite sua idade:</p>
+            <input type="number" name="num1" id="idade">
+        </div>
+        <input id="verificar" type="button" value="Verificar" onclick="verificar()">
+    </section>
+    <footer>
+        Desenvolvido por Maria Beatriz.
+    </footer>
+    <script>
+        function verificar(){
+            var idade = document.getElementById('idade')
+            var res = document.getElementById('res')
+
+            var idade = Number(idade.value) //como estamos pegando o valor do DOM, é preciso converter para número
+
+            if(idade == ''){ 
+                window.alert('Digite a sua idade para verificar.')
+            } else {
+                if(idade <= 0 || idade > 110){
+                    window.alert('Idade inválida')
+                } else if(idade >= 18) {
+                    window.alert('Maior de idade!')
+                } else {
+                    window.alert('Menor de idade!')
+                } 
+            }         
+        }
+    </script>
+</body>
+</html>

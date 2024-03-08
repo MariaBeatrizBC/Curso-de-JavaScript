@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo1.css">
+    <title>Verificador de idade</title>
+</head>
+<body onload="carregar()"> <!--quando recarregar a página, chama a function-->
+    <header>
+        <h1>Verificador de idade</h1>
+    </header>
+    <section>
+        <div id="msg">
+            <p id="anoDeNasc">Ano de nascimento: </p>
+            <input type="number" name="txtAno" id="txtAno">
+        </div>
+        <div id="sexo">
+            <p id="sex">Sexo:</p>
+            <input type="radio" name="radSex" id="fem" checked> <!--os radios precisam ter o mesmo nome para que apenas um seja selecionado-->
+            <label for="fem">Feminino</label>
+            <input type="radio" name="radSex" id="masc">
+            <label for="masc">Masculino</label>
+        </div>
+        <div id="res">
+            <input id="btnVerificar" type="button" value="Verificar" onclick="verificar()">
+            <p>Preencha os dados para verificar.</p>
+        </div>
+    </section>
+    <footer>
+        <p>desenvolvido por Maria Beatriz</p>
+    </footer>
+    <script src="script1.js"></script>
+</body>
+</html>

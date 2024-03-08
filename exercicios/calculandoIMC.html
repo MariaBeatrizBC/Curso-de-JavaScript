@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: midnightblue;
+            font: normal 15px 'Arial';
+        }
+        h1 {
+            font-size: 18px;
+            color: white;
+            width: 600px;
+            text-align: center;
+            margin: auto;
+            padding: 20px;
+        }
+        section {
+            width: 600px;;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 20px;
+        }
+        #verificar {
+            margin-top: 10px;
+            padding: 8px;
+            background-color: white;
+            border-radius: 50px;
+            border: solid 1px gray;
+        }
+        footer {
+            color: white;
+            text-align: center;
+            margin-top: 20px;
+            font-style: italic;
+        }
+    </style>
+    <title>Exec 01</title>
+</head>
+<body>
+    <header>
+        <h1>Faça um programa JavaScript em que o usuário informará sua altura e peso e o programa calculará o seu IMC.</h1>
+    </header>
+    <section>
+        <div>
+            <p>Digite os dados abaixo para calcular o IMC:</p>
+            <p>Altura: <input type="number" name="alt" id="alt"></p>
+            <p>Peso: <input type="number" name="peso" id="peso"></p>
+        </div>
+        <input id="verificar" type="button" value="Verificar IMC" onclick="verificar()">
+        <div id="res">
+            <p>Resultado:</p>
+        </div>
+    </section>
+    <footer>
+        Desenvolvido por Maria Beatriz.
+    </footer>
+    <script>
+        function verificar(){
+            var alt = document.getElementById('alt')
+            var peso = document.getElementById('peso')
+            var res = document.getElementById('res')
+            res.innerHTML = ''
+
+            var alt = Number(alt.value) //como estamos pegando o valor do DOM, é preciso converter para número
+            var peso = Number(peso.value)
+
+            if(alt == '' || peso == ''){ 
+                window.alert('Digite os números para verificar.')
+            } else {
+                var imc =  peso / (alt*alt) 
+                res.innerHTML += '<p>O IMC é ' + imc + '.</p>'
+
+                if(imc < 18.5) {
+                    res.innerHTML += '<p>Classificação: MAGREZA</p>'
+                    res.innerHTML += '<p>Grau de obesidade: 0</p>'
+                } else if(imc >= 18.5 && imc <= 24.9) {
+                    res.innerHTML += '<p>Classificação: NORMAL</p>'
+                    res.innerHTML += '<p>Grau de obesidade: 0</p>'
+                } else if(imc >= 25.0 && imc <= 29.9) {
+                    res.innerHTML += '<p>Classificação: SOBREPESO</p>'
+                    res.innerHTML += '<p>Grau de obesidade: |</p>'
+                } else if(imc >= 30.0 && imc <= 39.9) {
+                    res.innerHTML += '<p>Classificação: OBESIDADE</p>'
+                    res.innerHTML += '<p>Grau de obesidade: ||</p>'
+                } else {
+                    res.innerHTML += '<p>Classificação: OBESIDADE GRAVE</p>'
+                    res.innerHTML += '<p>Grau de obesidade: |||</p>'
+                }
+            }         
+        }
+    </script>
+</body>
+</html>

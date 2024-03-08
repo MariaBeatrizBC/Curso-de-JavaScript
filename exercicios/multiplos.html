@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: darkgreen;
+            font: normal 15px 'Arial';
+        }
+        h1 {
+            font-size: 18px;
+            color: white;
+            width: 700px;
+            text-align: center;
+            margin: auto;
+            padding: 20px;
+        }
+        section {
+            width: 600px;;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 20px;
+        }
+        #verificar {
+            margin-top: 10px;
+            padding: 8px;
+            background-color: white;
+            border-radius: 50px;
+            border: solid 1px gray;
+        }
+        footer {
+            color: white;
+            text-align: center;
+            margin-top: 20px;
+            font-style: italic;
+        }
+    </style>
+    <title>Exec 01</title>
+</head>
+<body>
+    <header>
+        <h1>Se listarmos todos os números naturais abaixo de 10 que são múltiplos de 3 ou 5, obtemos 3, 5, 6 e 9. A soma desses múltiplos é 23. Faça um programa JavaScript que encontre a soma de todos os múltiplos de 3 ou 5 abaixo de 1000.</h1>
+    </header>
+    <section>
+        <div>
+            <p>Clique no botão para somar todos os múltiplos de 3 ou 5 abaixo de 1000:</p>
+        </div>
+        <input id="verificar" type="button" value="Somar múltiplos" onclick="somar()">
+        <div id="res"></div>
+    </section>
+    <footer>
+        Desenvolvido por Maria Beatriz.
+    </footer>
+    <script>
+        function somar(){
+            var res = document.getElementById('res')
+            var soma = 0
+            for(var mult = 0; mult < 1000; mult++) {
+                if(mult % 3 == 0 || mult % 5 == 0){
+                    soma += mult
+                    res.innerHTML = `<p>A soma de todos os múltiplos de 3 e 5 abaixo de 1000 é ${soma}.</p>`
+                }
+            }          
+
+        }
+    </script>
+</body>
+</html>
